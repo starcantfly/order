@@ -5,8 +5,10 @@ import com.imooc.product.common.DecreaseStockInput;
 import com.imooc.product.common.ProductInfoOutput;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,11 +17,12 @@ import java.util.List;
 @Slf4j
 public class ClientController {
 
-//    @Autowired
-//    LoadBalancerClient loadBalancerClient;
-//
-//    @Autowired
-//    RestTemplate restTemplate;
+
+    @Autowired
+    LoadBalancerClient loadBalancerClient;
+
+    @Autowired
+    RestTemplate restTemplate;
 
     @Autowired
     private ProductClient productClient;
